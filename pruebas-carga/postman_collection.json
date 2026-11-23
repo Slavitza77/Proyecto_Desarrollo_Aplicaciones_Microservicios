@@ -1,0 +1,182 @@
+{
+  "info": {
+    "name": "Microservicios - pruebas de carga y CRUD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Para 100 peticiones concurrentes use el Collection Runner o ab_scripts.sh."
+  },
+  "variable": [
+    {
+      "key": "django",
+      "value": "http://localhost:8000"
+    },
+    {
+      "key": "node",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Django - listar albumes",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{django}}/api/albumes/",
+          "host": [
+            "{{django}}"
+          ],
+          "path": [
+            "api",
+            "albumes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Django - crear album",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{django}}/api/albumes/",
+          "host": [
+            "{{django}}"
+          ],
+          "path": [
+            "api",
+            "albumes"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Rumours\",\n  \"artista\": \"Fleetwood Mac\",\n  \"anio\": 1977,\n  \"genero\": \"Rock\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Django - crear track",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{django}}/api/tracks/",
+          "host": [
+            "{{django}}"
+          ],
+          "path": [
+            "api",
+            "tracks"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"album\": 1,\n  \"titulo\": \"Dreams\",\n  \"numero_pista\": 2,\n  \"duracion_segundos\": 257\n}"
+        }
+      }
+    },
+    {
+      "name": "Django - listar tracks",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{django}}/api/tracks/",
+          "host": [
+            "{{django}}"
+          ],
+          "path": [
+            "api",
+            "tracks"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Node - health",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{node}}/health",
+          "host": [
+            "{{node}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Node - registrar evento",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{node}}/eventos",
+          "host": [
+            "{{node}}"
+          ],
+          "path": [
+            "eventos"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"usuario_id\": \"u1\",\n  \"track_id\": 1,\n  \"album_id\": 1,\n  \"tipo_evento\": \"play\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Node - listar eventos",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{node}}/eventos",
+          "host": [
+            "{{node}}"
+          ],
+          "path": [
+            "eventos"
+          ]
+        }
+      }
+    }
+  ]
+}

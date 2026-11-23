@@ -27,3 +27,4 @@ db.sqlite3
 .DS_Store
 *.zip
 HANDOFF_Microservicios.md
+evento.json

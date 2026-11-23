@@ -1,0 +1,19 @@
+{
+  "name": "eventos-node",
+  "version": "1.0.0",
+  "description": "Microservicio de eventos y usuarios con Firebase (Cloud Firestore) y New Relic",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r newrelic index.js",
+    "start:sin-apm": "node index.js"
+  },
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0",
+    "firebase-admin": "^14.5.1",
+    "newrelic": "^14.13.0"
+  }
+}

@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Denegar todo acceso de clientes. Solo el servicio Node (firebase-admin) escribe y lee,
+    // porque el SDK Admin omite estas reglas.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
