@@ -52,3 +52,21 @@ Endpoints: `GET /health`, `POST /eventos`, `GET /eventos`.
 
 `pruebas-carga/ab_scripts.sh` lanza peticiones concurrentes con `ab` (local o vía Docker `httpd:2.4`) y guarda la salida en `evidencias/`.
 También se incluye `pruebas-carga/postman_collection.json`.
+
+Para la prueba de carga, Django se sirve con gunicorn (el servidor `runserver` es solo de desarrollo y no soporta 100 conexiones simultáneas):
+
+```bash
+cd catalogo-django && . .venv/bin/activate && pip install -r requirements.txt
+gunicorn catalogo.wsgi -w 4 -b 0.0.0.0:8000
+```
+
+## Observabilidad (New Relic)
+
+El agente APM se carga con `node -r newrelic index.js` (`npm start`); la licencia sale de `NEW_RELIC_LICENSE_KEY` en `.env`.
+Para la telemetría de host se usa el agente de infraestructura en Docker, con la licencia en un archivo local fuera del repo:
+
+```bash
+docker run -d --name newrelic-infra --network host --cap-add SYS_PTRACE --privileged --pid=host \
+  -v "/:/host:ro" -v /var/run/docker.sock:/var/run/docker.sock -v newrelic-infra:/etc/newrelic-infra \
+  --env-file ~/.config/microservicios/newrelic.env newrelic/infrastructure:latest
+```

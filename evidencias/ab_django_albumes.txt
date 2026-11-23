@@ -1,0 +1,42 @@
+This is ApacheBench, Version 2.3 <$Revision$>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+
+
+Server Software:        gunicorn
+Server Hostname:        localhost
+Server Port:            8000
+
+Document Path:          /api/albumes/
+Document Length:        347 bytes
+
+Concurrency Level:      100
+Time taken for tests:   5.595 seconds
+Complete requests:      3000
+Failed requests:        0
+Total transferred:      2001000 bytes
+HTML transferred:       1041000 bytes
+Requests per second:    536.22 [#/sec] (mean)
+Time per request:       186.490 [ms] (mean)
+Time per request:       1.865 [ms] (mean, across all concurrent requests)
+Transfer rate:          349.28 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.3      0       3
+Processing:     6  182  22.2    182     254
+Waiting:        5  182  22.2    181     253
+Total:          8  182  22.0    182     254
+
+Percentage of the requests served within a certain time (ms)
+  50%    182
+  66%    186
+  75%    190
+  80%    194
+  90%    207
+  95%    215
+  98%    228
+  99%    230
+ 100%    254 (longest request)
