@@ -1,0 +1,29 @@
+# Credenciales y secretos (NUNCA versionar)
+serviceAccountKey.json
+*-firebase-adminsdk-*.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs del agente New Relic
+newrelic_agent.log
+*.log
+
+# Node
+node_modules/
+
+# Python / Django
+.venv/
+venv/
+__pycache__/
+*.pyc
+db.sqlite3
+
+# Editor / sistema
+.vscode/
+.idea/
+.DS_Store
+*.zip
+HANDOFF_Microservicios.md
