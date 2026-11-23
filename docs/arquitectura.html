@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;background:#fff;font-family:'DejaVu Sans',Arial,sans-serif}
+</style></head><body>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620">
+<defs>
+<marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#2f4858"/></marker>
+<marker id="g" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#2e7d32"/></marker>
+</defs>
+<rect width="1100" height="620" fill="#ffffff"/>
+<!-- cliente -->
+<rect x="30" y="230" width="190" height="110" rx="10" fill="#eef2f6" stroke="#2f4858" stroke-width="2"/>
+<text x="125" y="272" text-anchor="middle" font-size="18" font-weight="bold" fill="#1d2d3a">1. Cliente</text>
+<text x="125" y="298" text-anchor="middle" font-size="14" fill="#1d2d3a">Navegador / Postman</text>
+<text x="125" y="320" text-anchor="middle" font-size="14" fill="#1d2d3a">curl / ab (carga)</text>
+<!-- django -->
+<rect x="330" y="40" width="270" height="150" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+<text x="465" y="72" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b4d20">2. Microservicio de catálogo</text>
+<text x="465" y="98" text-anchor="middle" font-size="14" fill="#1b4d20">Django REST Framework</text>
+<text x="465" y="120" text-anchor="middle" font-size="13" fill="#1b4d20">/api/albumes/ · /api/tracks/</text>
+<rect x="375" y="136" width="180" height="40" rx="6" fill="#ffffff" stroke="#2e7d32"/>
+<text x="465" y="161" text-anchor="middle" font-size="14" fill="#1b4d20">BD propia: SQLite</text>
+<!-- node -->
+<rect x="330" y="400" width="270" height="150" rx="10" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+<text x="465" y="432" text-anchor="middle" font-size="18" font-weight="bold" fill="#7a2f00">3. Microservicio de eventos</text>
+<text x="465" y="458" text-anchor="middle" font-size="14" fill="#7a2f00">Node.js + Express + firebase-admin</text>
+<text x="465" y="480" text-anchor="middle" font-size="13" fill="#7a2f00">/eventos · /health</text>
+<rect x="375" y="496" width="180" height="40" rx="6" fill="#ffffff" stroke="#e65100"/>
+<text x="465" y="521" text-anchor="middle" font-size="14" fill="#7a2f00">agente APM newrelic</text>
+<!-- firestore -->
+<rect x="700" y="415" width="220" height="120" rx="10" fill="#fffde7" stroke="#f9a825" stroke-width="2"/>
+<text x="810" y="455" text-anchor="middle" font-size="18" font-weight="bold" fill="#6b4d00">Cloud Firestore</text>
+<text x="810" y="480" text-anchor="middle" font-size="13" fill="#6b4d00">(Firebase, modo producción)</text>
+<text x="810" y="503" text-anchor="middle" font-size="13" fill="#6b4d00">eventos_reproduccion</text>
+<!-- new relic -->
+<rect x="820" y="130" width="250" height="200" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+<text x="945" y="162" text-anchor="middle" font-size="18" font-weight="bold" fill="#0d3b73">4. New Relic (nube)</text>
+<rect x="840" y="182" width="210" height="52" rx="6" fill="#ffffff" stroke="#1565c0"/>
+<text x="945" y="205" text-anchor="middle" font-size="14" fill="#0d3b73">APM: tiempo de respuesta,</text>
+<text x="945" y="224" text-anchor="middle" font-size="14" fill="#0d3b73">throughput y errores</text>
+<rect x="840" y="248" width="210" height="52" rx="6" fill="#ffffff" stroke="#1565c0"/>
+<text x="945" y="271" text-anchor="middle" font-size="14" fill="#0d3b73">Infraestructura: CPU,</text>
+<text x="945" y="290" text-anchor="middle" font-size="14" fill="#0d3b73">RAM y almacenamiento</text>
+<!-- agente infra -->
+<rect x="640" y="230" width="150" height="110" rx="10" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
+<text x="715" y="268" text-anchor="middle" font-size="15" font-weight="bold" fill="#3c0e55">Agente de</text>
+<text x="715" y="288" text-anchor="middle" font-size="15" font-weight="bold" fill="#3c0e55">infraestructura</text>
+<text x="715" y="312" text-anchor="middle" font-size="13" fill="#3c0e55">(contenedor Docker)</text>
+<!-- flechas -->
+<path d="M220,265 L330,120" stroke="#2f4858" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+<path d="M220,305 L330,470" stroke="#2f4858" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+<text x="238" y="170" font-size="13" fill="#2f4858" transform="rotate(-48 238 170)">HTTP / JSON</text>
+<text x="226" y="420" font-size="13" fill="#2f4858" transform="rotate(48 226 420)">HTTP / JSON</text>
+<path d="M600,475 L700,475" stroke="#e65100" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+<text x="612" y="465" font-size="12" fill="#7a2f00">gRPC</text>
+<path d="M600,520 C760,600 960,560 960,330" stroke="#1565c0" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+<text x="690" y="578" font-size="13" fill="#0d3b73">telemetría APM (HTTPS)</text>
+<path d="M790,285 L820,285" stroke="#6a1b9a" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+<text x="610" y="82" font-size="12" fill="#0d3b73" transform="rotate(-8 610 82)"></text>
+<text x="25" y="608" font-size="13" fill="#444">Cada microservicio posee su propia base de datos (Database-per-Service): SQLite para el catálogo y Cloud Firestore para los eventos.</text>
+</svg></body></html>

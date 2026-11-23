@@ -28,3 +28,5 @@ db.sqlite3
 *.zip
 HANDOFF_Microservicios.md
 evento.json
+!docs/Informe_Microservicios_Grupo01.docx
+/Informe_Microservicios_Grupo01.docx
